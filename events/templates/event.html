@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="col-xs-12 col-sm-6">
+        <h2>{{ event.title }}</h2>
+        <div><h3>{{ event.description }}</h3></div>
+        <div><p>{{ event.event_date|date: }}</p></div>
+        <div><p>{{ event.event_time }}</p></div>
+        {% if event.price > 0 %}
+            <div><p>{{ event.price }} &#8372;</p></div>
+        {% endif %}
+        <div><img src="{{ event.photo.url }}"></div>
+    </div>
+{% endblock %}
